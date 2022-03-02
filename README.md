@@ -1,5 +1,5 @@
 # GDP-system
-Storage conditions monitoring and control system
+<h2>Storage conditions monitoring and control system</h2>
 
 Client side app:
 -Reads the temperature and humidity from DHT22 sensors connected to the microcontrollers
