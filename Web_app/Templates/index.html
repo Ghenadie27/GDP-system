@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>MIDpharma GDP</title>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="{{url_for('static', filename='vertic.jpg')}}"/>
+    <link rel="canonical" href="https://getbootstrap.com/docs/3.4/examples/jumbotron/">
+    <link rel="shortcut icon" href="{{url_for('static', filename='vertic.jpg')}}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">
+  </head>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages%}
+            <div class="alert alert-{{ category }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+  <body style="background-image: url('static/chimie.jpg');">
+     <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" >MIDpharma GDP</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+                <a href="/" class="btn btn-success" role="button"><span class="material-icons-outlined">home</span></a>
+                <a href="/login" class="btn btn-success" role="button"><span class="material-icons-outlined">login</span></a>
+                <a href="/logout" class="btn btn-success" role="button"><span class="material-icons-outlined">logout</span></a>
+                <a href="/partener" class="btn btn-success" role="button"><span class="material-icons-outlined">article</span></a>
+                <a href="/contact" class="btn btn-success" role="button"><span class="material-icons-outlined">contact_support</span></a>
+            </div>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>MIDpharma</h1>
+        <p>Cine este MIDpharma? MIDpharma este unul dintre cei mai importanți furnizori de servicii de custodie în distribuție farmaceutică, logistică, asistență pentru producători de medicamente la standarde GDP. </p>
+        <p><a class="btn btn-primary btn-lg" href="https://www.ema.europa.eu/en/human-regulatory/post-authorisation/compliance/good-distribution-practice" role="button">Mai mult despre GDP &raquo;</a></p>
+      </div>
+    </div>
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Echipa</h2>
+          <p>Managerii noștri au o bogată experiență profesională, cred în profesionalism și performanță, și cultivă aceste calități în rândul tuturor angajaților.</p>
+<!--          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
+        </div>
+        <div class="col-md-4">
+          <h2>Facilități</h2>
+          <p>Rețeaua logistică este formată din 3 depozite prin care se asigură acoperire națională. Toate acestea sunt certificate în acord cu standardul internațional de calitate ISO 9001:2015 și sunt autorizate de ANMDMR în conformitate cu Bunele Practici de Distribuție. </p>
+<!--          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
+       </div>
+        <div class="col-md-4">
+          <h2>Flota</h2>
+          <p>Flota de livrare este compusă din 15 autoutilitare, complet echipate cu sisteme de control și monitorizare a temperaturii în ambele regimuri reglementate: 15-25 grade C sau 2-8 grade C.</p>
+<!--          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
+        </div>
+      </div>
+      <hr>
+      <footer>
+        <p>&copy; 2022 MIDpharma</p>
+      </footer>
+    </div> <!-- /container -->
+    </body>
+</html>
+
